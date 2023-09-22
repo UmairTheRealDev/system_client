@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::table('surveys', function (Blueprint $table) {
+            $table->string('signboard')->after('day');
+            $table->string('showcase')->after('day');
+            $table->string('ldu_table')->after('day');
+            $table->string('promoter')->after('day');
+            $table->string('cabinet')->after('day');
+            $table->string('promotion_stand')->after('day');
+            $table->string('ldu_qty')->after('day');
+            $table->string('foc_soh')->after('day');
+            $table->date('date_till')->after('day');
+            $table->date('date_from')->after('day');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('surveys', function (Blueprint $table) {
+            //
+        });
+    }
+};
